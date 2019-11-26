@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Document</title>
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="style.css" />
+<style type="text/css">
+	.container{
+		background: #778899;
+		height: 1100px;
+	}
+	form{
+		width: 600px;
+	    height: 900px;
+	    margin-top: 100px;
+	    margin-left: 28%;
+	} 
+
+</style>
+</head>
+<body>
+    <div class="container">
+    	<div class="row">
+    		<div class="col-4">
+    			<div class="validate-form">
+			        <form action="#" th:action="@{/}" th:object="${validateForm}"
+			            method="post">
+			            <h2 class="text-center">Form Validate</h2>
+			            <div class="form-group">
+			            	<label>Input 1</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-user"></i></span> <input
+			                        type="text" class="form-control" th:field="*{maSach}"
+			                        placeholder="Nhập vào số ký tự tối đa là 5 " />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('maSach')}"
+			                    th:errors="*{maSach}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 2</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{ngayMuon}"
+			                        placeholder=" " />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('ngayMuon')}"
+			                    th:errors="*{ngayMuon}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 3</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{ngayTra}"
+			                        placeholder="" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('ngayTra')}"
+			                    th:errors="*{ngayTra}"></span>
+			            </div>
+			            
+			            <div class="form-group">
+			            	<label>Input 4</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{PositiveMax}"
+			                        placeholder="Nhập ký tự có số lượng bằng 50" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('PositiveMax')}"
+			                    th:errors="*{PositiveMax}"></span>
+			            </div>
+			            <div class="form-group">
+			            	<label>Input 5</label>
+			                <div class="input-group">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span> <input
+			                        type="text" class="form-control" th:field="*{tacGia}"
+			                        placeholder="Nhập vào Email" />
+			
+			                </div>
+			                <span class="red" th:if="${#fields.hasErrors('tacGia')}"
+			                    th:errors="*{tacGia}"></span>
+			            </div>
+			           
+			            <div class="form-group">
+			                <button type="submit" class="btn btn-primary login-btn btn-block">Validate</button>
+			            </div>
+			        </form>
+			    </div>
+    		</div>
+    	</div>
+    </div>
+</body>
+</html>
