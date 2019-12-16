@@ -21,6 +21,7 @@ public class ThuexeService {
 	@Autowired
 	ThuexeReponsitory thuexeReponsitory;
 	
+	@Cacheable("thuexe")
 	public List<ThuexeDto>  getDS(){
 		List<ThuexeDto> listTXDto = new ArrayList<>();
 		List<ThuexeEntity> listTX = (List<ThuexeEntity>) thuexeReponsitory.findAll();
