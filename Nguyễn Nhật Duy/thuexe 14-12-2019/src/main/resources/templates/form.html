@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+</head>
+
+<body>
+
+    <div class="container" id="main-content">
+        <div class="row d-flex justify-content-center">
+            <form style="min-width: 300px;" action="#" th:action="@{/thuexe/save}" th:object="${thuexe}" method="post">
+			    <h5 class="text-center">Contact form</h5>
+		
+			    <input type="hidden" th:field="*{id}" />
+			
+			    <div class="form-group">
+			        <input class="form-control" type="text" placeholder="Nơi đi"
+			               th:field="*{noidi}" th:errorclass="field-error" />
+			    </div>
+			
+			    <div class="form-group">
+			        <input class="form-control" type="text" placeholder="Nơi đến"
+			               th:field="*{noiden}" th:errorclass="field-error" />
+			    </div>
+			
+			    <div class="form-group">
+			        <input class="form-control" type="text" placeholder="Ngày đi"
+			               th:field="*{ngaydi}" th:errorclass="field-error" />
+			    </div>
+			    
+			    <div class="form-group">
+			        <input class="form-control" type="text" placeholder="Giờ đi"
+			               th:field="*{giodi}" th:errorclass="field-error" />
+			    </div>
+			    
+			    <div class="form-group">
+			        <input class="form-control" type="text" placeholder="Giờ đến"
+			               th:field="*{gioden}" th:errorclass="field-error" />
+			    </div>
+			    
+			    <div class="form-group">
+			        <input class="form-control" type="text" placeholder="Giá tiền"
+			               th:field="*{giatien}" th:errorclass="field-error" />
+			    </div>
+			    
+			    <div class="form-group">
+			        <input class="form-control" type="text" placeholder="Số ghế"
+			               th:field="*{soghe}" th:errorclass="field-error" />
+			    </div>
+			
+			    <div class="form-group">
+			        <button type="submit" class="btn btn-block btn-primary">
+			            <i class="fa fa-save"></i> Save
+			        </button>
+			    </div>
+			</form>
+        </div>
+    </div>
+
+</body>
+</html>
